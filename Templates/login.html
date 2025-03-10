@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body>
+<!-- Container pentru a centrat totul pe pagina -->
+<div class="container">
+    <h1>Login</h1>  <!-- Titlul paginii -->
+
+    <!-- Formularul de login -->
+    <form action="{{ url_for('login_form') }}" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" name="username" placeholder="Type your username" id="username" required>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAapJREFUSEuNVdmVgzAMHHVCOoFOQiUslWQ7IZ2EThzLt7Bk4p+8+NA1BwReBMCVn7Clr3SxPQxbBILjEDVYusPHZdXnMlCKEQKFSprH9Z++KxJ0BdTqJkfY4PAEcAJ4A7QT3JkTtKnbQo0ORF8z4A5RX4zAidaYTFmlOPs0g/IhYOpHER5ykocE8TJGBbYWqCdAL33u5eXCXfw0IoUEm9/7u+EUn++/J5AMmQE62g4U1jEO/90kTAykJiYAh45BuJgwGCtH1lxJn1/NBBwayAQsbsiiCL8Ujo765KXKOpjT5ROgNXVglw8CWSq9AXYQVB6ZStYbaf1K8qZ60SWBFShdY5oyBrOCQbKMILa9UjwZX2aRzt8w65en38Q1W9U1tZ4ErI7wlq6cMZAK4+BMzeKbncva81s8EYQ3RQwk9z9c+XB0HZXL7aCLkZtuftbVGnpNjNkTIwfrKO57aZ/nzp4vloFTvNO3ysbHAizHrZLDeKTybihfPCd/MsGAP6wEko26g7UFWZ+CpC+dRZe+JQO6fhQ2iJG2OOrMkbuWtZjMHRLlprqLTapgfQEGgLgjaxz15AAAAABJRU5ErkJggg=="/>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" placeholder="Type your password" id="password" required>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAcNJREFUSEuNVdthwzAIPDZpNnEnSTpJ40naThJvUm+iGAlJIJAT/ySWeB53mBA+BCDZm3xEIKTxJts5j2Yf3kps8QrSDWVZQ4mda+T/70RbQLgi0SJeOxKtQNpiBFTUuDXT8g3AT3HREGXP+3G0nmGmOtC1tLQLgIe83QH8yf8rAE78cZxdANobHsnDJeWGgD8AcBIOvra+ium3nP8C+JpBNemghapUYmxGYnH1/0cne+miUkkXSqBx4oacnZO2kB4jFXsOo2vpVJ52IC1nLwJoUEUtV46JtD50syZBv2hsiRN0w1Sg0x1YshSI7IR4qDxA/nXPTHQEbIeu1sNvmwitDZYHxwO0+g8EY0eUy2ThfWrxFogsQz3cEw72So0A1TwK+eyqcIi9WgZV43kXsrcquiaw7cuKimjnVkU4JjMD/SJwpXEtj7QT7nt6OE2YbdqKcTPQ9D3bOR6iIsGRppX74ZJ0M/OrwBInqC5DpCvNdJwJwCvFqbptU+F178DSd/geWPKp/G47NEtJ0IV2quOgJcKOJJtV5bdhCAtS/oIVNYdEVAj2e1YxfzM2PdVIya+V9fY8Kk3Dbgd22bm7S7eXxP4J6NDKH9rG20sAAAAASUVORK5CYII="/>
+
+        <button type="submit">Login</button>
+        <button type="reset">Reset</button>
+    </form>
+    <h3>{{ login_info }}</h3>  <!-- Mesajul de eroare sau succes -->
+</div>
+</body>
+</html>
