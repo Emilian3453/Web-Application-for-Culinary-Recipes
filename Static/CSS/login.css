@@ -1,0 +1,68 @@
+/* Setează fundalul și fontul pentru întreaga pagină */
+html, body {
+    background: url('../images/poza2.jpg');
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', 'Helvetica', sans-serif; /* Fonturi accesibile */
+}
+
+/* Container pentru a centrat totul pe pagina */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* Centrarea pe verticală */
+    align-items: center;      /* Centrarea pe orizontală */
+    min-height: 100vh;        /* Folosește întreaga înălțime a ferestrei */
+    text-align: center;
+    background: transparent;
+}
+
+/* Stilizarea titlului */
+h1 {
+    font-size: 2.5em;
+    color: white;
+    margin-bottom: 20px;  /* Adăugăm un spațiu sub titlu */
+}
+
+/* Formularul */
+form {
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Etichetele de text */
+label {
+    font-weight: bold;
+    margin: 10px 0 5px;
+    color: white;
+}
+
+/* Inputurile de text */
+input[type="text"], input[type="password"] {
+    padding: 10px 30px;  /* Adăugăm padding suplimentar pentru a face loc iconiței */
+    width: 100%;  /* Inputurile vor ocupa întreaga lățime a formularului */
+    margin-bottom: 20px;  /* Spațiu între inputuri */
+    background-color: white;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Stilizarea iconițelor (user și lock) */
+input[type="text"]::before, input[type="password"]::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+}
+
