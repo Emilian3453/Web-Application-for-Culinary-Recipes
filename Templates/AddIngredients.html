@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Ingredient</title>
+    <style>
+        *{
+            background:peachpuff;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+        }
+
+        form {
+            max-width: 400px;
+            margin: auto;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 5px;
+            margin: 10px 0;
+        }
+
+        button {
+            cursor: pointer;
+            padding: 10px 15px;
+            font-size: 16px;
+        }
+
+        #ingredients-list {
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Add a New Ingredient</h1>
+
+<!-- Form to Add New Ingredient -->
+<form action="/AddIngredients" method="POST">
+    <label for="add_ingredient_name">Ingredient Name:</label>
+    <input type="text" id="add_ingredient_name" name="add_ingredient_name" required>
+
+    <button type="submit">Submit Ingredient</button>
+</form>
+
+<!-- Display Existing Ingredients -->
+<h2>Ingredient List:</h2>
+<ul id="ingredients-list">
+    {% for ingredient in ingrediente2 %}
+    <li>
+<!--        {{ ingredient[1] }}-->
+        {{ ingredient[0] }}.{{ ingredient[1] }}
+        <form method="POST" action="{{ url_for('delete_ingredient', ingredient_id=ingredient[0]) }}" style="display:inline;">
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+    {% endfor %}
+</ul>
+
+<h2>Modify Ingredient:</h2>
+<form action="/update_ingredient" method="POST">
+    <label for="ingredient_id">Ingredient ID:</label>
+    <input type="text" id="ingredient_id" name="ingredient_id" required placeholder="Enter Ingredient ID">
+
+    <label for="ingredient_name">New Ingredient Name:</label>
+    <input type="text" id="ingredient_name" name="ingredient_name" required placeholder="Enter New Ingredient Name">
+
+    <button type="submit">Update Ingredient</button>
+</form>
+</body>
+</html>
